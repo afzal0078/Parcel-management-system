@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Service</title>
+    <link rel="stylesheet" href="/css/BookingService.css">
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div id="customerDetails">
+            <table>
+                <tr><th>Details</th></tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="customerName" id="customerName"></td>
+                </tr>
+                <tr><th>Pickup Address</th></tr>
+                
+                <tr>
+                    <td>Address Line1:</td>
+                    <td><input type="text" name="addressLine1" id="addressLine1"></td>
+                </tr>
+                <tr>
+                    <td>Address Line2:</td>
+                    <td><input type="text" name="addressLine2" id="addressLine2"></td>
+                </tr>
+                <tr>
+                    <td>Landmark:</td>
+                    <td><input type="text" name="landmark" id="landmark"></td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td><input type="text" name="city" id="city"></td>
+                </tr>
+                <tr>
+                    <td>State/Provience/Region:</td>
+                    <td><input type="text" name="stateProvienceRegion" id="stateProvienceRegion"></td>
+                </tr>
+                <tr>
+                    <td>Zip/Postal Code:</td>
+                    <td><input type="text" name="zipPostalCode" id="zipPostalCode"></td>
+                </tr>
+                <tr>
+                    <td>Country:</td>
+                    <td><input type="text" name="country" id="country"></td>
+                </tr>
+                <tr><th>Contact Details</th></tr>
+                <tr>
+                    <td>Phone</td>
+                    <td><input type="text" name="phone" id="phone" minlength="10" maxlength="15"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td id="email"></td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div id="bookingContainer">
+            <form action="BookingServlet" method="post" name="bookingForm">
+                <table>
+                    <tr>
+                        <td>Receiver Name:</td>
+                        <td><input type="text" name="recName" id="recName"></td>
+                    </tr>
+                    <tr>
+                        <td>Receiver Address Line1:</td>
+                        <td><input type="text" name="recAddressLine1" id="recAddressLine1"></td>
+                    </tr>
+                    <tr>
+                        <td>Receiver Address Line2:</td>
+                        <td><input type="text" name="recAddressLine2" id="recAddressLine2"></td>
+                    </tr>
+                    <tr>
+                        <td>Receiver Landmark:</td>
+                        <td><input type="text" name="recLandmark" id="recLandmark"></td>
+                    </tr>
+                    <tr>
+                        <td>Receiver City:</td>
+                        <td><input type="text" name="recCity" id="recCity"></td>
+                    </tr>
+                    <tr>
+                        <td>Receiver State/Provience/Region:</td>
+                        <td><input type="text" name="recStateProvienceRegion" id="recStateProvienceRegion"></td>
+                    </tr>
+                    <tr>
+                        <td>Receiver Zip/Postal Code:</td>
+                        <td><input type="text" name="recPinPostalCode" id="recPinPostalCode"></td>
+                    </tr>
+                    <tr>
+                        <td>Receiver Country:</td>
+                        <td><input type="text" name="recCountry" id="recCountry"></td>
+                    </tr>
+                    <tr>
+                        <td>Receiver Mobile:</td>
+                        <td><input type="text" name="recMobileNumber" id="recMobileNumber" minlength="10" maxlength="15"></td>
+                    </tr>
+                    <tr>
+                        <td>Parcel Weight:</td>
+                        <td id="parWeight"><input type="text" name="parWeightKg" id="parWeightKg" size="4" minlength="4" maxlength="4"> Kg <input type="text" name="parWeightGram" id="parWeightGram" size="3" minlength="3" maxlength="3"> gm</td>
+                    </tr>
+                    <tr>
+                        <td>Parcel Contents Description:</td>
+                        <td>
+                            <input type="text" name="parContentsDescription" id="parContentsDescription">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Parcel Delivery Type:</td>
+                        <td>
+                            <select name="parDeliveryType" id="parDeliveryType">
+                                <option value="Checkin Freight">Checkin Freight</option>
+                                <option value="Local delivery or pickup">Local delivery or pickup</option>
+                                <option value="International shipping">International shipping</option>
+                                <option value="Overnight shipping">Overnight shipping</option>
+                                <option value="Priority Mail">Priority Mail</option>
+                                <option value="Domestic shipping" selected>Domestic shipping</option>
+                                <option value="Standard Delivery">Standard Delivery</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Parcel Packing Preference:</td>
+                        <td>
+                            <select name="parPackingPreference" id="parPackingPreference">
+                                <option value="Eco-friendly" selected>Eco-friendly</option>
+                                <option value="Corrugagated Box">Corrugagated Box</option>
+                                <option value="Padded">Padded</option>
+                                <option value="Mailing Tube">Mailing Tube</option>
+                                <option value="Bubble Wrap">Bubble Wrap</option>
+                                <option value="Foam Inserts">Foam Inserts</option>
+                                <option value="Oversized Box">Oversized Box</option>
+                                <option value="Custom Printed Box">Custom Printed Box</option>
+                                <option value="Inflatable Air Pillows">Inflatable Air Pillows</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Parcel Pickup Time:</td>
+                        <td>
+                            <select name="parPickupTime" id="parPickupTime">
+                                <option value="8AM-11AM">8AM-11AM</option>
+                                <option value="11AM-2PM">11AM-2PM</option>
+                                <option value="2PM-5PM">2PM-5PM</option>
+                                <option value="5PM-8PM">5PM-8PM</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Parcel Dropoff Time:</td>
+                        <td>
+                            <select name="parDropoffTime" id="parDropoffTime">
+                                <option value="8AM-11AM">8AM-11AM</option>
+                                <option value="11AM-2PM">11AM-2PM</option>
+                                <option value="2PM-5PM">2PM-5PM</option>
+                                <option value="5PM-8PM">5PM-8PM</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Parcel Service Cost:</td>
+                        <td><input type="text" name="parServiceCost" id="parServiceCost" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Payment Time:</td>
+                        <td><input type="text" name="parPaymentTime" id="parPaymentTime" disabled></td>
+                    </tr>
+                    <tr>
+                        <td><button type="reset">Reset</button></td>
+                        <td><button type="submit" name="Submit" >Submit</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        
+    </main>
+    <footer></footer>
+</body>
+<script src="/javascript/bookingservice.js\"></script>
+</html>

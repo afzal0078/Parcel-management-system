@@ -2,8 +2,6 @@
 
 A full-stack web application for managing parcel deliveries, built with Spring Boot (Backend) and Angular (Frontend).
 
-![System Architecture](screenshots/architecture-diagram.png) *Add your screenshot*
-
 ## 🚀 Features
 
 - **User Management**
